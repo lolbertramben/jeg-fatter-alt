@@ -50,3 +50,11 @@ time, mark, audio, video {
 	font-family: cen;
 	z-index: 2;
 }
+#links {
+	margin-top: 30px;
+	margin-left: 40px;
+}
+#addLink {
+	margin-top: 50px;
+	margin-left: 40px;
+}
