@@ -2,6 +2,7 @@ class Link {
     constructor(elements){
         this.linkEl = document.createElement("a");
         this.linkEl.href = elements.url;
+        this.linkEl.setAttribute("target", "_selfe");
         this.linkEl.innerText = elements.text;
     };
     update(){
