@@ -1,9 +1,9 @@
 
 class Link {
-    constructor(urls, texts){
+    constructor(elements){
         this.linkEl = document.createElement("a");
-        this.linkEl.href = urls;
-        this.linkEl.innerText = texts;
+        this.linkEl.href = elements.url;
+        this.linkEl.innerText = elements.text;
     };
     update(){
         this.li = document.createElement("li")
@@ -14,19 +14,25 @@ class Link {
 };
 
 class Element {
-    constructor(){
-        
+    constructor(url, text){
+        this.url = url;
+        this.text = text;
     };
 };
 
 let links = [];
-let Elements = [];
+let elements = [];
 
-let urls =["https://da.wikipedia.org/wiki/Kalaha", "https://www.br.dk/blog/kalaha-regler/", "https://www.bog-ide.dk/produkt/115216/kalaha-dize", "https://www.coolshop.dk/legetoej/braetspil-og-spil/kalaha/", "https://kalahamusic.dk/"];
-let texts = ["Link til Wikipwdia.org", "Link til regler", "Link til webshop 1", "Link til webshop 2", 'Link til bandet "Kalaha"'];
+//Links
+elements.push(new Element("123", "test"));
+elements.push(new Element("https://da.wikipedia.org/wiki/Kalaha", "Link til Wikipwdia.org"));
+elements.push(new Element("https://www.br.dk/blog/kalaha-regler/", "Link til regler"));
+elements.push(new Element("https://www.bog-ide.dk/produkt/115216/kalaha-dize", "Link til webshop 1"));
+elements.push(new Element("https://www.coolshop.dk/legetoej/braetspil-og-spil/kalaha/", "Link til webshop 2"));
+elements.push(new Element("https://kalahamusic.dk/", 'Link til bandet "Kalaha"'));
 
-for (let i = 0; i < urls.length; i++){
-    let newLink = new Link(urls[i], texts[i]);
+for (let i = 0; i < elements.length; i++){
+    let newLink = new Link(elements[i], elements[i]);
     links.push(newLink);
 };
 
