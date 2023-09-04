@@ -1,4 +1,3 @@
-
 class Link {
     constructor(elements){
         this.linkEl = document.createElement("a");
