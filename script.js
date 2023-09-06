@@ -13,23 +13,16 @@ class Link {
     };
 };
 
-class Element {
-    constructor(url, text){
-        this.url = url;
-        this.text = text;
-    };
-};
-
 let links = [];
 let elements = [];
 
 //Links
-elements.push(new Element("123", "test"));
-elements.push(new Element("https://da.wikipedia.org/wiki/Kalaha", "Link til Wikipwdia.org"));
-elements.push(new Element("https://www.br.dk/blog/kalaha-regler/", "Link til regler"));
-elements.push(new Element("https://www.bog-ide.dk/produkt/115216/kalaha-dize", "Link til webshop 1"));
-elements.push(new Element("https://www.coolshop.dk/legetoej/braetspil-og-spil/kalaha/", "Link til webshop 2"));
-elements.push(new Element("https://kalahamusic.dk/", 'Link til bandet "Kalaha"'));
+elements.push({url: "123", text: "test"});
+elements.push({url: "https://da.wikipedia.org/wiki/Kalaha", text: "Link til Wikipwdia.org"});
+elements.push({url: "https://www.br.dk/blog/kalaha-regler/", text: "Link til regler"});
+elements.push({url: "https://www.bog-ide.dk/produkt/115216/kalaha-dize", text: "Link til webshop 1"});
+elements.push({url: "https://www.coolshop.dk/legetoej/braetspil-og-spil/kalaha/", text: "Link til webshop 2"});
+elements.push({url: "https://kalahamusic.dk/", text: 'Link til bandet "Kalaha"'});
 
 
 
@@ -45,7 +38,7 @@ links.forEach(Link => {
 function addLink(){
     let urlInput = document.querySelector("#urlLink").value;
     let titleInput = document.querySelector("#titleLink").value;
-    elements.unshift(new Element(urlInput, titleInput));
+    elements.unshift({url: urlInput, text: titleInput});
     links.unshift(new Link(elements[0]));
     links[0].update();
     document.querySelector("#urlLink").value = "";
